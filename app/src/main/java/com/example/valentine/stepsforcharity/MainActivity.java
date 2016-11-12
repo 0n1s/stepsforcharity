@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity
 
 
         imageview2=(ImageView)findViewById(R.id.imageView2);//start/stop
-        imageView3=(ImageView)findViewById(R.id.imageView3);//donate
+        imageView3=(ImageView)findViewById(R.id.imageView3);//stop
 
         money=(EditText)findViewById(R.id.editText);
 imageview2.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +81,8 @@ imageview2.setOnClickListener(new View.OnClickListener() {
         integer = integer == null ? 0 : integer;
 
         switch(integer) {
-            case R.drawable.start:
-                imageView3.setImageResource(R.drawable.stop);
+            case R.drawable.iconplay:
+                imageView3.setImageResource(R.drawable.iconx);
                 Toast.makeText(MainActivity.this, "Start pressed", Toast.LENGTH_SHORT).show();
 
                 SharedPreferences.Editor editor = sharedpreferences.edit();
