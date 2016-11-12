@@ -3,8 +3,6 @@ package com.example.valentine.stepsforcharity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -16,8 +14,6 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static android.support.v7.appcompat.R.styleable.Toolbar;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
@@ -39,16 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
 
+_loginButton=(Button)findViewById(R.id.btn_login);
             _loginButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -57,15 +46,15 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-            _signupLink.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    // Start the Signup activity
-                    Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-                    startActivityForResult(intent, REQUEST_SIGNUP);
-                }
-            });
+//            _signupLink.setOnClickListener(new View.OnClickListener() {
+//
+//                @Override
+//                public void onClick(View v) {
+//                    // Start the Signup activity
+//                    Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+//                    startActivityForResult(intent, REQUEST_SIGNUP);
+//                }
+//            });
         }
 
         public void login() {

@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity
     Double latitude;
     String current_location;
     ImageView imageview2,imageView3;
-    TextView t1,t2,t3,t4,t5,t6;
+    TextView dist,steps,cash,loc,t5,t6;
     EditText money;
     String registerurl="";
 
@@ -61,10 +61,9 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 //declarations of variable to be used;
-        t1=(TextView)findViewById(R.id.textView3);//distance
-        t2=(TextView)findViewById(R.id.textView5);//steps
-        t3=(TextView)findViewById(R.id.textView7);//money
-        t4=(TextView)findViewById(R.id.textView9);//current location
+        dist=(TextView)findViewById(R.id.dist);//distance
+        steps=(TextView)findViewById(R.id.steps);//steps
+        cash=(TextView)findViewById(R.id.cash);//money
 
 
         imageview2=(ImageView)findViewById(R.id.imageView2);//start/stop
@@ -101,8 +100,8 @@ imageview2.setOnClickListener(new View.OnClickListener() {
                 Toast.makeText(MainActivity.this, "Stop pressed", Toast.LENGTH_SHORT).show();
               float dist=  getDistance(Double.parseDouble(la),Double.parseDouble(lon),latitude,longtitude);
                 Toast.makeText(MainActivity.this, Float.toString(dist), Toast.LENGTH_SHORT).show();
-                t1.setText(Float.toString(dist));
-                t2.setText(Float.toString(dist/2));
+                dist.setText(Float.toString(dist));
+                steps.setText(Float.toString(dist/2));
                 break;
 
 
@@ -249,7 +248,7 @@ imageview2.setOnClickListener(new View.OnClickListener() {
         } catch (IOException e) {
             e.printStackTrace();
         }
-t4.setText(current_location);
+loc.setText(current_location);
 
         locationsetter( longtitude,  latitude);
 

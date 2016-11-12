@@ -4,6 +4,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/content_signup"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -68,6 +69,8 @@
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btn_signup"
                 android:layout_width="fill_parent"
+                android:background="@color/MediumSeaGreen"
+                android:textColor="@color/white"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"

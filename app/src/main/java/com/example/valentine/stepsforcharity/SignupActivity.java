@@ -1,6 +1,7 @@
 package com.example.valentine.stepsforcharity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -19,12 +20,10 @@ public class SignupActivity extends AppCompatActivity {
 
     @BindView(R.id.input_name) EditText _nameText;
     @BindView(R.id.input_email) EditText _emailText;
-    @BindView(R.id.input_password)
-    EditText _passwordText;
-    @BindView(R.id.btn_signup)
-    Button _signupButton;
-    @BindView(R.id.link_login)
-    TextView _loginLink;
+    @BindView(R.id.input_password) EditText _passwordText;
+    @BindView(R.id.btn_signup) Button signup;
+    @BindView(R.id.link_login) TextView _loginLink;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,20 +31,20 @@ public class SignupActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
-            _signupButton.setOnClickListener(new View.OnClickListener() {
+            signup.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    signup();
+                  startActivity(new Intent(SignupActivity.this,LoginActivity.class));
                 }
             });
-
-            _loginLink.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Finish the registration screen and return to the Login activity
-                    finish();
-                }
-            });
+//
+//            _loginLink.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    // Finish the registration screen and return to the Login activity
+//                    finish();
+//                }
+//            });
         }
 
     public void signup() {
@@ -56,7 +55,7 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
-        _signupButton.setEnabled(false);
+signup.setEnabled(false);
 
         final ProgressDialog progressDialog = new ProgressDialog(SignupActivity.this);
         progressDialog.setIndeterminate(true);
@@ -83,15 +82,14 @@ public class SignupActivity extends AppCompatActivity {
 
 
     public void onSignupSuccess() {
-        _signupButton.setEnabled(true);
+        signup.setEnabled(true);
         setResult(RESULT_OK, null);
         finish();
     }
 
     public void onSignupFailed() {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-
-        _signupButton.setEnabled(true);
+signup.setEnabled(true);
     }
 
     public boolean validate() {
