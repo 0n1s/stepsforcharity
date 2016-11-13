@@ -56,14 +56,14 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//declarations of variable to be used;
-        dist=(TextView)findViewById(R.id.dist);//distance
-        steps=(TextView)findViewById(R.id.steps);//steps
-        cash=(TextView)findViewById(R.id.cash);//money
+////declarations of variable to be used;
+//        dist=(TextView)findViewById(R.id.dist);//distance
+//        steps=(TextView)findViewById(R.id.steps);//steps
+//        cash=(TextView)findViewById(R.id.cash);//money
 
 
-        imageview2=(ImageView)findViewById(R.id.imageView2);//start/stop
-        imageView3=(ImageView)findViewById(R.id.imageView3);//stop
+        imageview2=(ImageView)findViewById(R.id.imageButton);//start/stop
+        imageView3=(ImageView)findViewById(R.id.imageButton);//stop
 
 //        money=(EditText)findViewById(R.id.editText);
 imageview2.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +72,7 @@ imageview2.setOnClickListener(new View.OnClickListener() {
     {
 
         ImageView imageView = (ImageView) view;
-        assert(R.id.imageView2 == imageView.getId());
+        assert(R.id.imageButton == imageView.getId());
         Integer integer = (Integer) imageView.getTag();
         integer = integer == null ? 0 : integer;
 
