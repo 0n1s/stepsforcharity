@@ -6,13 +6,8 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
-import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.Telephony;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -21,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -69,7 +65,7 @@ public class MainActivity extends AppCompatActivity
         imageview2=(ImageView)findViewById(R.id.imageView2);//start/stop
         imageView3=(ImageView)findViewById(R.id.imageView3);//stop
 
-        money=(EditText)findViewById(R.id.editText);
+//        money=(EditText)findViewById(R.id.editText);
 imageview2.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view)
@@ -92,16 +88,16 @@ imageview2.setOnClickListener(new View.OnClickListener() {
 
 
                 break;
-            case R.drawable.stop:
-                imageView3.setImageResource(R.drawable.start);
+            case R.drawable.iconx:
+                imageView3.setImageResource(R.drawable.iconplay);
 
                 String la= sharedpreferences.getString("longtitude", "null");
                 String lon=sharedpreferences.getString("latitude","null");
                 Toast.makeText(MainActivity.this, "Stop pressed", Toast.LENGTH_SHORT).show();
-              float dist=  getDistance(Double.parseDouble(la),Double.parseDouble(lon),latitude,longtitude);
-                Toast.makeText(MainActivity.this, Float.toString(dist), Toast.LENGTH_SHORT).show();
-                dist.setText(Float.toString(dist));
-                steps.setText(Float.toString(dist/2));
+              float dists=  getDistance(Double.parseDouble(la),Double.parseDouble(lon),latitude,longtitude);
+                Toast.makeText(MainActivity.this, Float.toString(dists), Toast.LENGTH_SHORT).show();
+                dist.setText(Float.toString(dists));
+                steps.setText(Float.toString(dists/2));
                 break;
 
 
@@ -122,13 +118,6 @@ imageview2.setOnClickListener(new View.OnClickListener() {
 
             }
         });
-
-
-
-
-
-
-
 
 
     }
@@ -256,9 +245,9 @@ loc.setText(current_location);
         String la= sharedpreferences.getString("longtitude", "null");
         String lon=sharedpreferences.getString("latitude","null");
         Toast.makeText(MainActivity.this, "Stop pressed", Toast.LENGTH_SHORT).show();
-        float dist=  getDistance(Double.parseDouble(la),Double.parseDouble(lon),latitude,longtitude);
-        Toast.makeText(MainActivity.this, Float.toString(dist), Toast.LENGTH_SHORT).show();
-        t1.setText(Float.toString(dist));
+        float dists=  getDistance(Double.parseDouble(la),Double.parseDouble(lon),latitude,longtitude);
+        Toast.makeText(MainActivity.this, Float.toString(dists), Toast.LENGTH_SHORT).show();
+        dist.setText(Float.toString(dists));
 
     }
 
